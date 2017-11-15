@@ -2572,7 +2572,7 @@
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: #996600; /* #b74e91 */
 				}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -3262,7 +3262,7 @@
 		}
 
 		.wrapper.style3 {
-			background-color: #b74e91;
+			background-color: #996600; /* b74e91 */
 		}
 
 		.wrapper.style3-alt {
