@@ -3878,11 +3878,12 @@
 /* Intro */
 
 	#intro {
-		background-attachment: fixed;
+		background-color: #000;
+		/*background-attachment: fixed;
 		background-image: url("images/introBG.png");
 		background-position: top right;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;
+		background-size: 100% auto;*/
 	}
 
 		#intro p {
