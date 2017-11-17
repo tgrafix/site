@@ -298,7 +298,8 @@
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/TimelineMax.min.js"></script>
             <script src="assets/js/TweenMax.min.js"></script>
-            <script>
+<script>
+
 $(document).ready(function() {
 	flareBlink = new TimelineMax({repeat:-1}); 
 	var fblink = $(".flare");
@@ -317,8 +318,9 @@ $(document).ready(function() {
 	.to(fblink, .1, {opacity:.7})
 	.to(fblink,  2, {opacity: 1})
 	.to(fblink, .1, {opacity:.5, ease:Power2.easeIn})
-	
 	.to(fblink, 1, {opacity:1, delay:3});
+	
+	setTimeout(function () { audi.play(); }, 1000);
 });
 </script>
 
