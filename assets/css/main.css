@@ -3917,6 +3917,6 @@
 		}
 		
 /* New Inserts ---------------------------------------------- */
-.flag { position:absolute; top:0; right:5%; width:45%; margin-top:24%; transform: rotate(-5deg); }
+.flag { position:absolute; top:0; right:5%; width:45%; margin-top:25%; transform: rotate(-6deg); opacity:0; }
 .introbg { position:absolute; top:0; right:0; width:100%; }
-.flare { position:absolute; top:0; right:0; width:100%; }
+.flare { position:absolute; top:0; right:0; width:100%; opacity:0; }
