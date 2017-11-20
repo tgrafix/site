@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TGRAFIX Digital Laboratory - J Tuquib </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+<form id="tgrafix_form">
+    <input type="text" name="subject" placeholder="Subject" />
+    <textarea name="text" placeholder="Message" ></textarea>
+    <input type="submit" name="send" value="Send" />
+
+    <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site 
+    <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p -->
+</form>
+
+<script>
+
+    //update this with your $form selector
+    var form_id = "tgrafix_form";
+
+    var data = { "access_token": "ejgpm9fwb0mbtfcspudu9ozj" };
+
+    function onSuccess() {
+        // remove this to avoid redirect
+        window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+    }
+
+    function onError(error) {
+        // remove this to avoid redirect
+        window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+    }
+
+    var sendButton = $("#" + form_id + " [name='send']");
+
+    function send() {
+        sendButton.val('Sending…');
+        sendButton.prop('disabled',true);
+
+        var subject = $("#" + form_id + " [name='subject']").val();
+        var message = $("#" + form_id + " [name='text']").val();
+        data['subject'] = subject;
+        data['text'] = message;
+
+        $.post('https://postmail.invotes.com/send',
+            data,
+            onSuccess
+        ).fail(onError);
+
+        return false;
+    }
+
+    sendButton.on('click', send);
+
+    var $form = $("#" + form_id);
+    $form.submit(function( event ) {
+        event.preventDefault();
+    });
+</script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/TimelineMax.min.js"></script>
+            <script src="assets/js/TweenMax.min.js"></script>
+<script>
+$(document).ready(function() {
+	flareBlink = new TimelineMax({repeat:-1, delay:2}); 
+	var fblink = $(".flare");
+	flareBlink.to(fblink, .5, {opacity:1, delay:.5})
+	.to(fblink, .1, {opacity:.3})
+	.to(fblink, .5, {opacity: 1})
+	.to(fblink, .1, {opacity:.2})
+	.to(fblink, .2, {opacity:.7})
+	.to(fblink, .2, {opacity:.1})
+	.to(fblink,  1, {opacity: 1, ease:Power2.easeIn})
+	
+	.to(fblink, .1, {opacity:.3, delay:4})
+	.to(fblink, .1, {opacity:.7})
+	.to(fblink, .5, {opacity: 1})
+	.to(fblink, .1, {opacity:.3})
+	.to(fblink, .1, {opacity:.7})
+	.to(fblink,  2, {opacity: 1})
+	.to(fblink, .1, {opacity:.5, ease:Power2.easeIn})
+	.to(fblink, 1, {opacity:1, delay:3});
+		
+	TweenMax.fromTo(".flag", 1, {css: {opacity: "0"}}, {css:{opacity: "1"}, delay:2});
+});
+</script>
+
+	</body>
+</html>
