@@ -24,7 +24,7 @@
         </div>
         <div class="field message">
             <label for="message" style="text-align:center;">Message</label>
-            <textarea name="message" id="message" rows="2" placeholder="..." ></textarea><br />
+            <textarea name="message" id="message" rows="2" placeholder="Hi tgrafix..." ></textarea><br />
         </div>
         <div style="text-align:center;"><a href="" class="button baton">Send Message</a></div>
 </div>   
@@ -270,7 +270,7 @@
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2><span style="font:1.75em 'GreatVibes'; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);">Get in touch...</span></h2>
-							<p style="width: 40%; font:1.2em 'OpenSans'">If you have a project or creative requirement, shoot me an email.<br />I would love to hear from you.</p>
+							<p style="width: 45%; font:1.2em 'OpenSans'">For a design project or creative requirement, <span class="emailme">shoot me an email</span>. I would love to hear from you.</p>
                             
 
 							<div class="split style1">
@@ -293,13 +293,18 @@
 									<ul class="contact">
 										<li>
 											<h3>Email</h3>
-											<a href="#">tgrafix.design@gmail.com</a>
+											<span class="emailme" onClick="doMail();">tgrafix.design@gmail.com</span>
 										<li>
-											<h3>Tools</h3>
+											<h3>Tools Used</h3>
 											<ul class="icons">
-												<li><img src="images/zicons/github.png" /> <img src="images/zicons/cs6.png" /></li>
-												<li><img src="images/zicons/gsap.png" /> <img src="images/zicons/jquery.png" /> <img src="images/zicons/php.png" /></li>
-												<li><img src="images/zicons/html.png" /> <img src="images/zicons/css.png" /> <img src="images/zicons/js.png" /></li>
+												<li><img src="images/zicons/github.png" /></li>
+                                                <li><img src="images/zicons/cs6.png" /></li>
+                                                <li><img src="images/zicons/gsap.png" /></li>
+												<li><img src="images/zicons/jquery.png" /></li>
+                                                <li><img src="images/zicons/php.png" /></li>
+												<li><img src="images/zicons/html.png" /></li>
+                                                <li><img src="images/zicons/css.png" /></li>
+                                                <li><img src="images/zicons/js.png" /></li>
 											</ul>
 										</li>
 									</ul>
@@ -314,7 +319,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; TGRAFIX Design Laboratory - J Tuquib. </li><li>All Rights reserved 2017.</li>
+						<li class="footy">&copy; TGRAFIX Design Laboratory - J Tuquib. </li><li class="footy">All Rights reserved 2017.</li>
 					</ul>
 				</div>
 			</footer>
@@ -338,11 +343,12 @@
 $('#eBtn').click(function(){ TweenMax.killChildTweensOf( ".modal"); $(".modal").css("display", "block"); });
 $('#name').focusin(function(){ doButtInit(); }); $('#email').focusin(function(){ doButtInit(); })
 $('#message').focusin(function(){ doButtInit(); })
-$('#name').blur(function(){ fname = $('#name').val(); if (fname.trim()) { TweenMax.killTweensOf("#name"); $("#name").css("borderColor", "#333333"); }; });
-$('#email').blur(function(){ femail = $('#email').val(); if (femail.trim()) { TweenMax.killTweensOf("#email"); $("#email").css("borderColor", "#333333"); }; });
+$('#name').blur(function(){ fname = $('#name').val(); if (fname.trim()) { doFeldInit("#name") }; });
+$('#email').blur(function(){ femail = $('#email').val(); if (femail.trim()) { doFeldInit("#email"); }; });
 
 $('.close').click(function(){ $(".modal").css("display", "none"); });
 $('.baton').click(function(){ doMail(); });
+$('.emailme').click(function(){ TweenMax.killChildTweensOf( ".modal"); $(".modal").css("display", "block"); });
 $(window).click(function(event){
     if(event.target.id == 'myModal'){
         $('#myModal').css("display","none");
@@ -353,7 +359,11 @@ $(window).click(function(event){
     }
 });
 
-function doButtInit() {
+function doFeldInit(feld) { //reset button
+	TweenMax.killTweensOf(feld); $(feld).css("borderColor", "#333333");
+}
+
+function doButtInit() { //reset button
 	$('.baton').html("Send Message"); 
 	$('.baton').css("backgroundColor","#000000");
 }
@@ -401,7 +411,7 @@ var success = false;
 }
 
 function doBlink(feld) {
-	TweenMax.fromTo(feld, 1, {css: {borderColor: "#cc3333"}}, {css:{borderColor: "#333333"}, repeat:-1});
+	TweenMax.fromTo(feld, 1, {css: {borderColor: "#333333"}}, {css:{borderColor: "#cc3333"}, repeat:-1});
 }
 </script>
 

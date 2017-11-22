@@ -3954,4 +3954,9 @@ input:-ms-input-placeholder { color: #333 !important; }
 .close:hover, .close:focus { color: #fff; border-color:#fff; }
 i { vertical-align: middle; }
 
-ul.icons img { margin-right:10px; margin-top: 10px; }
+ul.icons li { margin-top: 10px; vertical-align: middle; }
+
+.footy { cursor: pointer; }
+.footy:hover { color:#ccc; }
+.emailme { cursor: pointer; border-bottom: dotted 1px rgba(255, 255, 255, 0.35); color:#ffcc33; }
+.emailme: hover { color:#fff; }
