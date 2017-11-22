@@ -3955,7 +3955,6 @@ input:-ms-input-placeholder { color: #333 !important; }
 i { vertical-align: middle; }
 
 ul.icons li { margin-top: 10px; vertical-align: middle; }
- 
 .footy { cursor: pointer; }
 .footy:hover { color:#ccc; }
 .emailme { cursor: pointer; border-bottom: dotted 1px rgba(255, 255, 255, 0.35); color:#ffcc33; }
