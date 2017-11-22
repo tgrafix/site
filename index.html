@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>TGRAFIX Digital Laboratory - J Tuquib </title>
+		<title>TGRAFIX Design Laboratory v2.0 - J Tuquib </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -10,7 +10,25 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
-
+<div id="myModal" class="modal">
+<div class="email-popup">
+<p style="text-align:right; padding:0px;"><i class="fa fa-close close"></i></p>
+<div id="eCont" style="margin-top:-30px;">
+        <div class="field half first name">
+            <label for="name" style="text-align:center;">Name</label>
+            <input type="text" name="name" id="name" placeholder="John Doe" /><br />
+        </div>
+        <div class="field half email">
+            <label for="email" style="text-align:center;">Email</label>
+            <input type="email" name="email" id="email" placeholder="email@domain.com" /><br />
+        </div>
+        <div class="field message">
+            <label for="message" style="text-align:center;">Message</label>
+            <textarea name="message" id="message" rows="2" placeholder="..." ></textarea><br />
+        </div>
+        <div style="text-align:center;"><a href="" class="button baton">Send Message</a></div>
+</div>   
+</div></div>
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<div class="inner">
@@ -39,8 +57,8 @@
 <img src="assets/css/images/flare.png" class="flare" />
                     
 						<div class="inner">
-							<h1><span style="font:1.2em 'GreatVibes';">Hi!, welcome to...</span><br /><span style="color:#ffcc33; font:1em 'OpenSans_Bold'; line-height:.75%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);">TGRAFIX Digital Laboratory</span></h1>
-							<p style="width: 65%; font:1em 'OpenSans'">I am&nbsp;&nbsp;<strong>Joseph Tuquib</strong>, a Graphic &amp; Web Designer and Computer Trainor based in the Philippines. I have been doing a variety of multimedia work in the last 10 years including print media, responsive web design and development, animation, user interface, tutorials and training workshops.</p><p style="width: 65%; font:1em 'OpenSans'">I am currently working as freelance and available for challenging opportunites.</p><p style="width: 65%; font:1em 'OpenSans'">Please <a href="#three" class="sp">get in touch</a>. I would love to hear from you.</p>
+							<h1><span style="font:1.2em 'GreatVibes';">Hi!, welcome to...</span><br /><span style="color:#ffcc33; font:1em 'OpenSans_Bold'; line-height:.75%; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);">TGRAFIX Design Laboratory</span></h1>
+							<p style="width: 65%; font:1em 'OpenSans'">I am&nbsp;&nbsp;<strong>Joseph Tuquib</strong>, a Graphic &amp; Web Designer and Computer Trainor based in the Philippines. I have been doing a variety of multimedia work in the last 10 years including print media, responsive web design and development, animation, user interface, tutorials and training workshops.</p><p style="width: 65%; font:1em 'OpenSans'">I am currently working as freelance and available for challenging opportunites.</p><p style="width: 65%; font:1em 'OpenSans'">Please <a id="eBtn" class="sp" style="cursor:pointer;">email me</a>. I would love to hear from you.</p>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Work Samples</a></li>
 							</ul>
@@ -252,11 +270,13 @@
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2><span style="font:1.75em 'GreatVibes'; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);">Get in touch...</span></h2>
-							<p style="width: 50%; font:1.2em 'OpenSans'">If you have a project or creative requirement, shoot me an email. I would love to hear from you.</p>
+							<p style="width: 40%; font:1.2em 'OpenSans'">If you have a project or creative requirement, shoot me an email.<br />I would love to hear from you.</p>
+                            
+
 							<div class="split style1">
 								<section>
 									<ul class="contact">
-										<li>
+                                    	<li>
 											<h3>Services</h3>
 											<span>&bull; Graphic and Layout Design<br />
                                             &bull; Art Direction<br />
@@ -267,9 +287,20 @@
                                             <br />
 											</span>
 										</li>
+									</ul>
+								</section>
+                                <section>
+									<ul class="contact">
 										<li>
 											<h3>Email</h3>
 											<a href="#">tgrafix.design@gmail.com</a>
+										<li>
+											<h3>Tools</h3>
+											<ul class="icons">
+												<li><img src="images/zicons/github.png" /> <img src="images/zicons/cs6.png" /></li>
+												<li><img src="images/zicons/gsap.png" /> <img src="images/zicons/jquery.png" /> <img src="images/zicons/php.png" /></li>
+												<li><img src="images/zicons/html.png" /> <img src="images/zicons/css.png" /> <img src="images/zicons/js.png" /></li>
+											</ul>
 										</li>
 									</ul>
 								</section>
@@ -283,21 +314,97 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; TGRAFIX Digital Laboratory - J Tuquib. </li><li>All Rights reserved 2017.</li>
+						<li>&copy; TGRAFIX Design Laboratory - J Tuquib. </li><li>All Rights reserved 2017.</li>
 					</ul>
 				</div>
 			</footer>
 
+            
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
+            <script type="text/javascript" src="assets/js/ema40f00a21.js"></script>
+            <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+			<script type="text/javascript"> (function(){ emailjs.init("user_P7FN52yVGOBghhCaq19SK"); })(); </script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
             <script src="assets/js/TimelineMax.min.js"></script>
             <script src="assets/js/TweenMax.min.js"></script>
+            
+<script>
+$('#eBtn').click(function(){ TweenMax.killChildTweensOf( ".modal"); $(".modal").css("display", "block"); });
+$('#name').focusin(function(){ doButtInit(); }); $('#email').focusin(function(){ doButtInit(); })
+$('#message').focusin(function(){ doButtInit(); })
+$('#name').blur(function(){ fname = $('#name').val(); if (fname.trim()) { TweenMax.killTweensOf("#name"); $("#name").css("borderColor", "#333333"); }; });
+$('#email').blur(function(){ femail = $('#email').val(); if (femail.trim()) { TweenMax.killTweensOf("#email"); $("#email").css("borderColor", "#333333"); }; });
+
+$('.close').click(function(){ $(".modal").css("display", "none"); });
+$('.baton').click(function(){ doMail(); });
+$(window).click(function(event){
+    if(event.target.id == 'myModal'){
+        $('#myModal').css("display","none");
+			doButtInit();
+			$('#name').val("");
+			$('#email').val("");
+			$('#message').val("");
+    }
+});
+
+function doButtInit() {
+	$('.baton').html("Send Message"); 
+	$('.baton').css("backgroundColor","#000000");
+}
+
+function doMail() {
+event.preventDefault();
+var success = false;
+	var fname    = $('#name').val();
+	var femail   = $('#email').val();
+	var fmessage = $('#message').val();
+	var valid = true;
+	var success = true;
+	
+	TweenMax.killChildTweensOf( ".modal");
+	$("#name").css("borderColor", "#333333");
+	$("#email").css("borderColor", "#333333");
+	bkolor=$(".baton").css('background-color').trim(); 
+	if (bkolor=="rgb(51, 153, 0)") { doButtInit(); return; } else {
+		if (!fname.trim()) { doBlink("#name"); valid=false; };
+		if (!femail.trim()) { doBlink("#email"); valid=false; }; 
+	};
+	
+	if (valid) { 
+		emailjs.send("tgrafix-mail", "temp", {"name": fname,"email":femail,"message":fmessage})
+		.then(function(response) {
+		}, function(err) {
+		   success = false;
+		});
+		TweenMax.fromTo(".baton", .5, {css:{backgroundColor : "#333333"}}, {css:{backgroundColor :"#339900"}});
+		$('.baton').html("<i class='fa fa-refresh fa-spin fa-2x fa-fw'></i> Sending...");
+		
+		if (success) { 
+			TweenMax.to(".baton", 1, {transformAroundCenter:{scaleX:1.2, scaleY:1}, repeat: 4});
+			$('.baton').html("<i class='fa fa-check-circle fa-2x'></i> Message Sent");
+			TweenMax.fromTo(".baton", .5, {css:{backgroundColor : "#333333"}}, {css:{backgroundColor :"#339900"}});
+			$('#name').val("");
+			$('#email').val("");
+			$('#message').val("");
+		} else {
+			TweenMax.fromTo(".baton", .5, {css:{backgroundColor : "#339900"}}, {css:{backgroundColor :"#ff6600"}});
+			TweenMax.to(".baton", .1, {x:4, repeat:3});
+			$('.baton').html("<i class='fa fa-chain-broken fa-2x'></i> Connection Error. Try Again.");
+		 }
+	} 
+}
+
+function doBlink(feld) {
+	TweenMax.fromTo(feld, 1, {css: {borderColor: "#cc3333"}}, {css:{borderColor: "#333333"}, repeat:-1});
+}
+</script>
+
 <script>
 $(document).ready(function() {
 	flareBlink = new TimelineMax({repeat:-1, delay:2}); 
