@@ -26,7 +26,7 @@
             <label for="message" style="text-align:center;">Message</label>
             <textarea name="message" id="message" rows="2" placeholder="Hi tgrafix..." ></textarea><br />
         </div>
-        <div style="text-align:center;"><a href="" class="button baton">Send Message</a></div>
+        <div style="text-align:center;"><span class="button baton">Send Message</span></div>
 </div>   
 </div></div>
 		<!-- Sidebar -->
@@ -367,8 +367,22 @@ function doButtInit() { //reset button
 	$('.baton').css("backgroundColor","#000000");
 }
 
+function stopEvent(e) {
+	if(!e) var e = window.event;
+	
+	//e.cancelBubble is supported by IE - this will kill the bubbling process.
+	e.cancelBubble = true; e.returnValue = false;
+
+	//e.stopPropagation works only in Firefox.
+	if (e.stopPropagation) {
+		e.stopPropagation();
+		e.preventDefault();
+	}
+	return false;
+}
+
 function doMail() {
-event.preventDefault();
+
 var success = false;
 	var fname    = $('#name').val();
 	var femail   = $('#email').val();
@@ -407,6 +421,17 @@ var success = false;
 			$('.baton').html("<i class='fa fa-chain-broken fa-2x'></i> Connection Error. Try Again.");
 		 }
 	} 
+
+	if(!e) var e = window.event;
+	
+	//e.cancelBubble is supported by IE - this will kill the bubbling process.
+	event.cancelBubble = true; event.returnValue = false;
+
+	//e.stopPropagation works only in Firefox.
+	if (event.stopPropagation) { event.stopPropagation();
+		event.preventDefault();
+	}
+	return false;
 }
 
 function doBlink(feld) {
